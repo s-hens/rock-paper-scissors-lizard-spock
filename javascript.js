@@ -2,7 +2,7 @@ const choices = ["rock", "paper", "scissors", "lizard", "spock"];
 
 function getComputerChoice() {
     let computerSelection = choices[Math.floor(Math.random() * 5)];
-    console.log(`${computerSelection}`);
+    return(`${computerSelection}`);
 }
 
 /*
@@ -20,8 +20,14 @@ Could also use choices.length instead of 5.
 function getPlayerChoice() {
     let playerSelection = prompt(`Choose your weapon`, ``);
     playerSelection = playerSelection.toLowerCase();
-    console.log(`${playerSelection}`);
+    return(`${playerSelection}`);
 }
 
-getComputerChoice();
-getPlayerChoice();
+console.log(getComputerChoice());
+console.log(getPlayerChoice());
+
+function playRound(computerSelection, playerSelection) {
+
+}
+
+playRound();
