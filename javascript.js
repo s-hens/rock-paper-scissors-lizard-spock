@@ -1,11 +1,9 @@
 const choices = ["rock", "paper", "scissors", "lizard", "spock"];
 
 function getComputerChoice() {
-    let computerChoice = choices[Math.floor(Math.random() * 5)];
-    console.log `${computerChoice}`;
+    let computerSelection = choices[Math.floor(Math.random() * 5)];
+    console.log(`${computerSelection}`);
 }
-
-getComputerChoice();
 
 /*
 [Math.random() * (max-min) + min] returns a random number < max and >= min.
@@ -20,13 +18,10 @@ Could also use choices.length instead of 5.
 */
 
 function getPlayerChoice() {
-    let playerChoice = prompt(`Choose your weapon`, ``);
-    playerChoice = playerChoice.toLowerCase();
-    console.log `${playerChoice}`;
+    let playerSelection = prompt(`Choose your weapon`, ``);
+    playerSelection = playerSelection.toLowerCase();
+    console.log(`${playerSelection}`);
 }
 
+getComputerChoice();
 getPlayerChoice();
-
-function matchUp(computerChoice, playerChoice) {
-
-}
