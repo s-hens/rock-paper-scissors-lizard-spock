@@ -1,4 +1,4 @@
-const options = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
+const options = ["rock", "paper", "scissors", "lizard", "spock"];
 
 function getComputerChoice() {
     const computerChoice = options[Math.floor(Math.random() * options.length)];
@@ -6,3 +6,11 @@ function getComputerChoice() {
 }
 
 getComputerChoice();
+
+function getPlayerChoice() {
+    const playerChoice = prompt(`Choose your weapon`, ``);
+    const playerChoiceLowerCase = playerChoice.toLowerCase();
+    console.log `${playerChoiceLowerCase}`;
+}
+
+getPlayerChoice();
