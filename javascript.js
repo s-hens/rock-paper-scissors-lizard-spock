@@ -35,79 +35,98 @@ function playRound(computerSelection, playerSelection) {
     switch (true) {
         /* Tie */
         case computerSelection == playerSelection:
-            alert(`It's a tie! You both selected ${playerSelection}.`)
+            alert(`It's a tie! You both selected ${playerSelection}.`);
             break;
         /* Computer chooses rock */
         case computerSelection == "rock" && playerSelection == "paper":
-            alert(`You win! Paper covers rock.`)
+            alert(`You win! Paper covers rock.`);
+            playerScore = playerScore + 1;
             break;
         case computerSelection == "rock" && playerSelection == "scissors":
-            alert(`You lose! Rock crushes scissors.`)
+            alert(`You lose! Rock crushes scissors.`);
+            computerScore = computerScore +1;
             break;
         case computerSelection == "rock" && playerSelection == "lizard":
-            alert(`You lose! Rock crushes lizard.`)
+            alert(`You lose! Rock crushes lizard.`);
+            computerScore = computerScore +1;
             break;
         case computerSelection == "rock" && playerSelection == "spock":
-            alert(`You win! Spock vapourises rock.`)
+            alert(`You win! Spock vapourises rock.`);
+            playerScore = playerScore + 1;
             break;
         /* Computer chooses paper */
         case computerSelection == "paper" && playerSelection == "rock":
-            alert(`You lose! Paper covers rock.`)
+            alert(`You lose! Paper covers rock.`);
+            computerScore = computerScore +1;
             break;
         case computerSelection == "paper" && playerSelection == "scissors":
-            alert(`You win! Scissors cut paper.`)
+            alert(`You win! Scissors cut paper.`);
+            playerScore = playerScore + 1;
             break;
         case computerSelection == "paper" && playerSelection == "lizard":
-            alert(`You win! Lizard eats paper.`)
+            alert(`You win! Lizard eats paper.`);
+            playerScore = playerScore + 1;
             break;
         case computerSelection == "paper" && playerSelection == "spock":
-            alert(`You lose! Paper disproves Spock.`)
+            alert(`You lose! Paper disproves Spock.`);
+            computerScore = computerScore +1;
             break;
         /* Computer chooses scissors */
         case computerSelection == "scissors" && playerSelection == "rock":
-            alert(`You win! Rock crushes scissors.`)
+            alert(`You win! Rock crushes scissors.`);
+            playerScore = playerScore + 1;
+            break;
         case computerSelection == "scissors" && playerSelection == "paper":
-            alert(`You lose! Scissors cut paper.`)
+            alert(`You lose! Scissors cut paper.`);
+            computerScore = computerScore +1;
             break;
         case computerSelection == "scissors" && playerSelection == "lizard":
-            alert(`You lose! Scissors decapitate lizard.`)
+            alert(`You lose! Scissors decapitate lizard.`);
+            computerScore = computerScore +1;
             break;
         case computerSelection == "scissors" && playerSelection == "spock":
-            alert(`You win! Spock smashes scissors.`)
+            alert(`You win! Spock smashes scissors.`);
+            playerScore = playerScore + 1;
             break;
         /* Computer chooses lizard */
         case computerSelection == "lizard" && playerSelection == "rock":
-            alert(`You win! Rock crushes lizard.`)
+            alert(`You win! Rock crushes lizard.`);
+            playerScore = playerScore + 1;
             break;
         case computerSelection == "lizard" && playerSelection == "paper":
-            alert(`You lose! Lizard eats paper.`)
+            alert(`You lose! Lizard eats paper.`);
+            computerScore = computerScore +1;
             break;
         case computerSelection == "lizard" && playerSelection == "scissors":
-            alert(`You win! Scissors decapitate lizard.`)
+            alert(`You win! Scissors decapitate lizard.`);
+            playerScore = playerScore + 1;
             break;
         case computerSelection == "lizard" && playerSelection == "spock":
-            alert(`You lose! Lizard poisons Spock.`)
+            alert(`You lose! Lizard poisons Spock.`);
+            computerScore = computerScore +1;
             break;
         /* Computer chooses spock */
         case computerSelection == "spock" && playerSelection == "rock":
-            alert(`You lose! Spock vapourises rock.`)
+            alert(`You lose! Spock vapourises rock.`);
+            computerScore = computerScore +1;
             break;
         case computerSelection == "spock" && playerSelection == "paper":
             alert(`You win! Paper disproves Spock.`)
+            playerScore = playerScore + 1;
              break;
         case computerSelection == "spock" && playerSelection == "scissors":
-            alert(`You lose! Spock smashes scissors.`)
+            alert(`You lose! Spock smashes scissors.`);
+            computerScore = computerScore +1;
             break;
         case computerSelection == "spock" && playerSelection == "lizard":
-            alert(`You win! Lizard poisions Spock.`)
+            alert(`You win! Lizard poisions Spock.`);
+            playerScore = playerScore + 1;
             break;
         /* Player goes rogue */
         default:
-            alert(`Hey! ${playerSelection} is not a valid choice. Please choose rock, scissors, lizard, or spock.`)
+            alert(`Hey! ${playerSelection} is not a valid choice. Please choose rock, scissors, lizard, or spock.`);
     }
     }
-
-playRound();
 
 /*
 Lines 32-33:
@@ -115,3 +134,25 @@ Variables computerSelection and playerSelection were originally declared only wi
 So I must define them within the scope of function playRound, otherwise they return "undefined".
 I do this by running functions getComputerChoice and getPlayerChoice inside function playRound.
 */
+
+let computerScore = 0;
+let playerScore = 0;
+
+function game() {
+    for (let i = 1; i < 6; i++){
+        playRound();
+        console.log(`Round number ${i}. Player Score: ${playerScore}. Computer Score: ${computerScore}.`);
+    }
+    switch (true) {
+        case computerScore == playerScore:
+            alert(`It's a tie!`);
+            break;
+        case computerScore > playerScore:
+            alert(`The computer wins!`);
+            break;
+        case computerScore < playerScore:
+            alert(`You win!`);
+    }
+}
+
+game();
