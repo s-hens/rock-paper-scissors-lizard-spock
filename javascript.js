@@ -1,8 +1,10 @@
 const choices = ["rock", "paper", "scissors", "lizard", "spock"];
+let computerScore = 0;
+let playerScore = 0;
 
 /*
-Line 1:
-Functions can refer to array "choices" because it is declared globally.
+Lines 1-3:
+Functions can refer to arrays & variables which are declared globally.
 */
 
 function getComputerChoice() {
@@ -11,7 +13,7 @@ function getComputerChoice() {
 }
 
 /*
-Line 9:
+Line 11:
 [Math.random() * (max-min) + min] returns a random number < max and >= min.
 In the array "choices" there are 5 items, [0] [1] [2] [3] [4].
 So I use [(Math.random() * (5-0) + 0)] simplified as [(Math.random() * 5)] to return a number < 5 and >= 0.
@@ -124,19 +126,16 @@ function playRound(computerSelection, playerSelection) {
             break;
         /* Player goes rogue */
         default:
-            alert(`Hey! ${playerSelection} is not a valid choice. Please choose rock, scissors, lizard, or spock.`);
+            alert(`Hey! ${playerSelection} is not a valid choice. Please choose rock, paper, scissors, lizard, or spock.`);
     }
     }
 
 /*
-Lines 32-33:
+Lines 34-35:
 Variables computerSelection and playerSelection were originally declared only within the scope of functions getComputerChoice and getPlayerChoice.
 So I must define them within the scope of function playRound, otherwise they return "undefined".
 I do this by running functions getComputerChoice and getPlayerChoice inside function playRound.
 */
-
-let computerScore = 0;
-let playerScore = 0;
 
 function game() {
     for (let i = 1; i < 6; i++){
@@ -156,3 +155,11 @@ function game() {
 }
 
 game();
+
+/*
+Line 141:
+The for-loop:
+First clause: Declare variable i. Assign it an initial value.
+Second clause: Declare condition. Loop will continue as long as condition is met.
+Third clause: Declare increment that i will increase by each loop.
+*/
