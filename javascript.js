@@ -1,3 +1,6 @@
+const scoreDiv = document.querySelector("#scoreDiv");
+const battleCommentaryDiv = document.querySelector("#battleCommentaryDiv");
+
 const choices = ["rock", "paper", "scissors", "lizard", "spock"];
 let computerScore = 0;
 let playerScore = 0;
@@ -15,123 +18,111 @@ function getPlayerChoice() {
 function playRound(computerSelection, playerSelection) {
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
-    console.log(`Computer chose ${computerSelection}. Player chose ${playerSelection}.`);
     switch (true) {
-        /* Tie */
+        //Tie
         case computerSelection == playerSelection:
-            alert(`It's a tie! You both selected ${playerSelection}.`);
+            battleCommentaryDiv.textContent = `It's a tie! You both selected ${playerSelection}.`;
             break;
-        /* Computer chooses rock */
+        //Computer chooses rock
         case computerSelection == "rock" && playerSelection == "paper":
-            alert(`You win! Paper covers rock.`);
+            battleCommentaryDiv.textContent = `You win! Paper covers rock.`;
             playerScore = playerScore + 1;
             break;
         case computerSelection == "rock" && playerSelection == "scissors":
-            alert(`You lose! Rock crushes scissors.`);
+            battleCommentaryDiv.textContent = `You lose! Rock crushes scissors.`;
             computerScore = computerScore +1;
             break;
         case computerSelection == "rock" && playerSelection == "lizard":
-            alert(`You lose! Rock crushes lizard.`);
+            battleCommentaryDiv.textContent = `You lose! Rock crushes lizard.`;
             computerScore = computerScore +1;
             break;
         case computerSelection == "rock" && playerSelection == "spock":
-            alert(`You win! Spock vapourises rock.`);
+            battleCommentaryDiv.textContent = `You win! Spock vapourises rock.`;
             playerScore = playerScore + 1;
             break;
-        /* Computer chooses paper */
+        //Computer chooses paper
         case computerSelection == "paper" && playerSelection == "rock":
-            alert(`You lose! Paper covers rock.`);
+            battleCommentaryDiv.textContent = `You lose! Paper covers rock.`;
             computerScore = computerScore +1;
             break;
         case computerSelection == "paper" && playerSelection == "scissors":
-            alert(`You win! Scissors cut paper.`);
+            battleCommentaryDiv.textContent = `You win! Scissors cut paper.`;
             playerScore = playerScore + 1;
             break;
         case computerSelection == "paper" && playerSelection == "lizard":
-            alert(`You win! Lizard eats paper.`);
+            battleCommentaryDiv.textContent = `You win! Lizard eats paper.`;
             playerScore = playerScore + 1;
             break;
         case computerSelection == "paper" && playerSelection == "spock":
-            alert(`You lose! Paper disproves Spock.`);
+            battleCommentaryDiv.textContent = `You lose! Paper disproves Spock.`;
             computerScore = computerScore +1;
             break;
-        /* Computer chooses scissors */
+        //Computer chooses scissors
         case computerSelection == "scissors" && playerSelection == "rock":
-            alert(`You win! Rock crushes scissors.`);
+            battleCommentaryDiv.textContent = `You win! Rock crushes scissors.`;
             playerScore = playerScore + 1;
             break;
         case computerSelection == "scissors" && playerSelection == "paper":
-            alert(`You lose! Scissors cut paper.`);
+            battleCommentaryDiv.textContent = `You lose! Scissors cut paper.`;
             computerScore = computerScore +1;
             break;
         case computerSelection == "scissors" && playerSelection == "lizard":
-            alert(`You lose! Scissors decapitate lizard.`);
+            battleCommentaryDiv.textContent = `You lose! Scissors decapitate lizard.`;
             computerScore = computerScore +1;
             break;
         case computerSelection == "scissors" && playerSelection == "spock":
-            alert(`You win! Spock smashes scissors.`);
+            battleCommentaryDiv.textContent = `You win! Spock smashes scissors.`;
             playerScore = playerScore + 1;
             break;
-        /* Computer chooses lizard */
+        //Computer chooses lizard
         case computerSelection == "lizard" && playerSelection == "rock":
-            alert(`You win! Rock crushes lizard.`);
+            battleCommentaryDiv.textContent = `You win! Rock crushes lizard.`;
             playerScore = playerScore + 1;
             break;
         case computerSelection == "lizard" && playerSelection == "paper":
-            alert(`You lose! Lizard eats paper.`);
+            battleCommentaryDiv.textContent = `You lose! Lizard eats paper.`;
             computerScore = computerScore +1;
             break;
         case computerSelection == "lizard" && playerSelection == "scissors":
-            alert(`You win! Scissors decapitate lizard.`);
+            battleCommentaryDiv.textContent = `You win! Scissors decapitate lizard.`;
             playerScore = playerScore + 1;
             break;
         case computerSelection == "lizard" && playerSelection == "spock":
-            alert(`You lose! Lizard poisons Spock.`);
+            battleCommentaryDiv.textContent = `You lose! Lizard poisons Spock.`;
             computerScore = computerScore +1;
             break;
-        /* Computer chooses spock */
+        //Computer chooses spock
         case computerSelection == "spock" && playerSelection == "rock":
-            alert(`You lose! Spock vapourises rock.`);
+            battleCommentaryDiv.textContent = `You lose! Spock vapourises rock.`;
             computerScore = computerScore +1;
             break;
         case computerSelection == "spock" && playerSelection == "paper":
-            alert(`You win! Paper disproves Spock.`)
+            battleCommentaryDiv.textContent = `You win! Paper disproves Spock.`;
             playerScore = playerScore + 1;
              break;
         case computerSelection == "spock" && playerSelection == "scissors":
-            alert(`You lose! Spock smashes scissors.`);
+            battleCommentaryDiv.textContent = `You lose! Spock smashes scissors.`;
             computerScore = computerScore +1;
             break;
         case computerSelection == "spock" && playerSelection == "lizard":
-            alert(`You win! Lizard poisions Spock.`);
+            battleCommentaryDiv.textContent = `You win! Lizard poisions Spock.`;
             playerScore = playerScore + 1;
             break;
-        /* Player goes rogue */
+        //Player goes rogue
         default:
             alert(`Hey! ${playerSelection} is not a valid choice. Please choose rock, paper, scissors, lizard, or spock.`);
     }
+    if (playerScore >= 5 && computerScore < 5) {
+        battleCommentaryDiv.textContent = `Player WINS the round! Final score: ${playerScore} to ${computerScore}. Play again?`;
+        computerScore = 0;
+        playerScore = 0;
+    } else if (computerScore >= 5 && playerScore <5) {
+        battleCommentaryDiv.textContent = `Computer WINS the round! Final score: ${playerScore} to ${computerScore}. Play again?`;
+        computerScore = 0;
+        playerScore = 0;
     }
-
-/*
-function game() {
-    for (let i = 1; i < 6; i++){
-        playRound();
-        console.log(`Round number ${i}. Player Score: ${playerScore}. Computer Score: ${computerScore}.`);
+    scoreDiv.textContent = `Player Score: ${playerScore}, Computer Score: ${computerScore}`;
     }
-    switch (true) {
-        case computerScore == playerScore:
-            alert(`It's a tie!`);
-            break;
-        case computerScore > playerScore:
-            alert(`The computer wins!`);
-            break;
-        case computerScore < playerScore:
-            alert(`You win!`);
-    }
-}
-
-game();
-*/
 
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", playRound);
