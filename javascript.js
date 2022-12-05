@@ -2,35 +2,19 @@ const choices = ["rock", "paper", "scissors", "lizard", "spock"];
 let computerScore = 0;
 let playerScore = 0;
 
-/*
-Lines 1-3:
-Functions can refer to arrays & variables which are declared globally.
-*/
-
 function getComputerChoice() {
     let computerSelection = choices[Math.floor(Math.random() * 5)];
     return(computerSelection);
 }
 
-/*
-Line 11:
-[Math.random() * (max-min) + min] returns a random number < max and >= min.
-In the array "choices" there are 5 items, [0] [1] [2] [3] [4].
-So I use [(Math.random() * (5-0) + 0)] simplified as [(Math.random() * 5)] to return a number < 5 and >= 0.
-Math.floor() rounds down to the nearest integer,
-thus the function returns an integer between 0 and 4.
-Could also use choices.length instead of 5.
-*/
-
 function getPlayerChoice() {
-    let playerSelection = prompt(`Choose your weapon`, ``);
-    playerSelection = playerSelection.toLowerCase();
+    let playerSelection = document.activeElement.id;
     return(playerSelection);
 }
 
 function playRound(computerSelection, playerSelection) {
-    computerSelection = getComputerChoice();
     playerSelection = getPlayerChoice();
+    computerSelection = getComputerChoice();
     console.log(`Computer chose ${computerSelection}. Player chose ${playerSelection}.`);
     switch (true) {
         /* Tie */
@@ -129,12 +113,6 @@ function playRound(computerSelection, playerSelection) {
     }
 
 /*
-Lines 34-35:
-Variables computerSelection and playerSelection were originally declared only within the scope of functions getComputerChoice and getPlayerChoice.
-So I must define them within the scope of function playRound, otherwise they return "undefined".
-I do this by running functions getComputerChoice and getPlayerChoice inside function playRound.
-*/
-
 function game() {
     for (let i = 1; i < 6; i++){
         playRound();
@@ -153,11 +131,19 @@ function game() {
 }
 
 game();
-
-/*
-Line 141:
-The for-loop:
-First clause: Declare variable i. Assign it an initial value.
-Second clause: Declare condition. Loop will continue as long as condition is met.
-Third clause: Declare increment that i will increase by each loop.
 */
+
+const rock = document.querySelector("#rock");
+rock.addEventListener("click", playRound);
+
+const paper = document.querySelector("#paper");
+paper.addEventListener("click", playRound);
+
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener("click", playRound);
+
+const lizard = document.querySelector("#lizard");
+lizard.addEventListener("click", playRound);
+
+const spock = document.querySelector("#spock");
+spock.addEventListener("click", playRound);
