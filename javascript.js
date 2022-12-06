@@ -24,19 +24,19 @@ function playRound(computerSelection, playerSelection) {
     //Icons to show what the computer chose
     switch(true) {
         case computerSelection == "rock":
-            computerIconDiv.innerHTML = `<i class="far fa-hand-rock"></i>`;
+            computerIconDiv.innerHTML = `<img src="./images/rock1.png">`;
             break;
         case computerSelection == "paper":
-            computerIconDiv.innerHTML = `<i class="far fa-hand-paper"></i>`;
+            computerIconDiv.innerHTML = `<img src="./images/paper1.png">`;
             break;
         case computerSelection == "scissors":
-            computerIconDiv.innerHTML = `<i class="far fa-hand-scissors"></i>`;
+            computerIconDiv.innerHTML = `<img src="./images/scissors1.png">`;
             break;
         case computerSelection == "lizard":
-            computerIconDiv.innerHTML = `<i class="far fa-hand-lizard"></i>`;
+            computerIconDiv.innerHTML = `<img src="./images/lizard1.png">`;
             break;
         case computerSelection == "spock":
-            computerIconDiv.innerHTML = `<i class="far fa-hand-spock"></i>`;
+            computerIconDiv.innerHTML = `<img src="./images/spock1.png">`;
             break;
         default:
             computerIconDiv.textContent = ``;
@@ -44,19 +44,19 @@ function playRound(computerSelection, playerSelection) {
     //Icons to show what the player chose
     switch(true) {
         case playerSelection == "rock":
-            playerIconDiv.innerHTML = `<i class="far fa-hand-rock"></i>`;
+            playerIconDiv.innerHTML = `<img src="./images/rock1.png">`;
             break;
         case playerSelection == "paper":
-            playerIconDiv.innerHTML = `<i class="far fa-hand-paper"></i>`;
+            playerIconDiv.innerHTML = `<img src="./images/paper1.png">`;
             break;
         case playerSelection == "scissors":
-            playerIconDiv.innerHTML = `<i class="far fa-hand-scissors"></i>`;
+            playerIconDiv.innerHTML = `<img src="./images/scissors1.png">`;
             break;
         case playerSelection == "lizard":
-            playerIconDiv.innerHTML = `<i class="far fa-hand-lizard"></i>`;
+            playerIconDiv.innerHTML = `<img src="./images/lizard1.png">`;
             break;
         case playerSelection == "spock":
-            playerIconDiv.innerHTML = `<i class="far fa-hand-spock"></i>`;
+            playerIconDiv.innerHTML = `<img src="./images/spock1.png">`;
             break;
         default:
             playerIconDiv.textContent = ``;

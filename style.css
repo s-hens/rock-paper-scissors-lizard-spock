@@ -22,6 +22,10 @@ div {
     flex-direction: column;
 }
 
+#computerIconDiv, #playerIconDiv {
+    font-size: 64px;
+}
+
 h1 {
     font-size: 64px;
     margin: 0;
