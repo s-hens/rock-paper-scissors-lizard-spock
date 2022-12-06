@@ -5,20 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors, Lizard, Spock</title>
-    <link rel="stylesheet" href="./style.css">
     <script src="./javascript.js" defer></script>
+    <script src="https://kit.fontawesome.com/017ecc6468.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
 </head>
 <body>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
-    <button id="lizard">Lizard</button>
-    <button id="spock">Spock</button>
-    <div id="battleCommentaryDiv">
-
+    <div class="header">
+        <h1>ROCK PAPER SCISSORS LIZARD SPOCK</h1>
     </div>
-    <div id="scoreDiv">
-
+    <div class="instructions">
+        <p>"It's very simple. Scissors cuts paper, paper covers rock, rock crushes lizard, lizard poisons Spock, Spock smashes scissors, scissors decapitate lizard, lizard eats paper, paper disproves Spock, Spock vaporizes rock, <u>and as it always has</u>, rock crushes scissors."</p>
+        <p>First player with 5 points wins the round.</p>
     </div>
+    <div id="battleCommentaryDiv"></div>
+    <div class="battleground">
+        <div class="battlegroundLeft">
+            <div id="playerIconDiv"></div>
+            <div id="playerScoreDiv"></div>
+        </div>
+        <div class="battlegroundRight">
+            <div id="computerIconDiv"></div>
+            <div id="computerScoreDiv"></div>
+        </div>
+    </div>
+    <div class="chooseYourWeapon">
+        <button id="rock"><i class="far fa-hand-rock"></i><br>Rock</button>
+        <button id="paper"><i class="far fa-hand-paper"></i><br>Paper</button>
+        <button id="scissors"><i class="far fa-hand-scissors"></i><br>Scissors</button>
+        <button id="lizard"><i class="far fa-hand-lizard"></i><br>Lizard</button>
+        <button id="spock"><i class="far fa-hand-spock"></i><br>Spock</button>
+    </div>
+
 </body>
 </html>

@@ -1,4 +1,7 @@
-const scoreDiv = document.querySelector("#scoreDiv");
+const playerScoreDiv = document.querySelector("#playerScoreDiv");
+const computerScoreDiv = document.querySelector("#computerScoreDiv");
+const playerIconDiv = document.querySelector("#playerIconDiv");
+const computerIconDiv = document.querySelector("#computerIconDiv");
 const battleCommentaryDiv = document.querySelector("#battleCommentaryDiv");
 
 const choices = ["rock", "paper", "scissors", "lizard", "spock"];
@@ -18,6 +21,46 @@ function getPlayerChoice() {
 function playRound(computerSelection, playerSelection) {
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
+    //Icons to show what the computer chose
+    switch(true) {
+        case computerSelection == "rock":
+            computerIconDiv.innerHTML = `<i class="far fa-hand-rock"></i>`;
+            break;
+        case computerSelection == "paper":
+            computerIconDiv.innerHTML = `<i class="far fa-hand-paper"></i>`;
+            break;
+        case computerSelection == "scissors":
+            computerIconDiv.innerHTML = `<i class="far fa-hand-scissors"></i>`;
+            break;
+        case computerSelection == "lizard":
+            computerIconDiv.innerHTML = `<i class="far fa-hand-lizard"></i>`;
+            break;
+        case computerSelection == "spock":
+            computerIconDiv.innerHTML = `<i class="far fa-hand-spock"></i>`;
+            break;
+        default:
+            computerIconDiv.textContent = ``;
+    }
+    //Icons to show what the player chose
+    switch(true) {
+        case playerSelection == "rock":
+            playerIconDiv.innerHTML = `<i class="far fa-hand-rock"></i>`;
+            break;
+        case playerSelection == "paper":
+            playerIconDiv.innerHTML = `<i class="far fa-hand-paper"></i>`;
+            break;
+        case playerSelection == "scissors":
+            playerIconDiv.innerHTML = `<i class="far fa-hand-scissors"></i>`;
+            break;
+        case playerSelection == "lizard":
+            playerIconDiv.innerHTML = `<i class="far fa-hand-lizard"></i>`;
+            break;
+        case playerSelection == "spock":
+            playerIconDiv.innerHTML = `<i class="far fa-hand-spock"></i>`;
+            break;
+        default:
+            playerIconDiv.textContent = ``;
+    }
     switch (true) {
         //Tie
         case computerSelection == playerSelection:
@@ -112,16 +155,25 @@ function playRound(computerSelection, playerSelection) {
         default:
             alert(`Hey! ${playerSelection} is not a valid choice. Please choose rock, paper, scissors, lizard, or spock.`);
     }
+    playerScoreDiv.textContent = `Player Score: ${playerScore}`;
+    computerScoreDiv.textContent = `Computer Score: ${computerScore}`;
     if (playerScore >= 5 && computerScore < 5) {
         battleCommentaryDiv.textContent = `Player WINS the round! Final score: ${playerScore} to ${computerScore}. Play again?`;
+        computerIconDiv.textContent = ``;
+        playerIconDiv.textContent = ``;
+        computerScoreDiv.textContent = ``;
+        playerScoreDiv.textContent = ``;
         computerScore = 0;
         playerScore = 0;
     } else if (computerScore >= 5 && playerScore <5) {
         battleCommentaryDiv.textContent = `Computer WINS the round! Final score: ${playerScore} to ${computerScore}. Play again?`;
+        computerIconDiv.textContent = ``;
+        playerIconDiv.textContent = ``;
+        computerScoreDiv.textContent = ``;
+        playerScoreDiv.textContent = ``;
         computerScore = 0;
         playerScore = 0;
     }
-    scoreDiv.textContent = `Player Score: ${playerScore}, Computer Score: ${computerScore}`;
     }
 
 const rock = document.querySelector("#rock");
