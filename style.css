@@ -8,13 +8,19 @@ body {
     flex-direction: column;
 }
 
+/*
 div {
     border: 2px solid red;
 }
+*/
 
 .battleground, .chooseYourWeapon {
     display: flex;
     justify-content: space-evenly;
+}
+
+#battleCommentaryDiv {
+    height: 50px;
 }
 
 .battlegroundLeft, .battlegroundRight {
@@ -48,9 +54,15 @@ button:hover {
     background-color: #566573;
     color: #FFFFFF;
     box-shadow: 0 5px #273746;
-    transform: translateY(4px);
+    transform: translateY(5px);
+    cursor: pointer;
 }
 
 button img {
     margin-bottom: -10px;
+    opacity: 0.7;
+}
+
+button:hover img {
+    opacity: 1;
 }
