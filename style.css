@@ -23,11 +23,34 @@ div {
 }
 
 #computerIconDiv, #playerIconDiv {
-    font-size: 64px;
+    height: 230px;
 }
 
 h1 {
     font-size: 64px;
     margin: 0;
     padding: 0;
+}
+
+button {
+    background-color: #566573;
+    color: #D6DBDF;
+    font-family: "VT323", monospace;
+    font-size: 32px;
+    width: 125px;
+    padding: 5px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 9px #2C3E50;
+}
+
+button:hover {
+    background-color: #566573;
+    color: #FFFFFF;
+    box-shadow: 0 5px #273746;
+    transform: translateY(4px);
+}
+
+button img {
+    margin-bottom: -10px;
 }
