@@ -1,4 +1,6 @@
 body {
+    height: 100vh;
+    margin: 0;
     background-color: #1C2833;
     color: #FFFFFF;
     font-family: "VT323", monospace;
@@ -6,30 +8,15 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
-/*
 div {
-    border: 2px solid red;
-}
-*/
-
-.battleground, .chooseYourWeapon {
-    display: flex;
-    justify-content: space-evenly;
+    padding: 10px;
 }
 
-#battleCommentaryDiv {
-    height: 50px;
-}
-
-.battlegroundLeft, .battlegroundRight {
-    display: flex;
-    flex-direction: column;
-}
-
-#computerIconDiv, #playerIconDiv {
-    height: 230px;
+.header {
+    background-color: #17202A;
 }
 
 h1 {
@@ -38,9 +25,80 @@ h1 {
     padding: 0;
 }
 
+.instructions {
+    background-color: #EAECEE;
+    border-radius: 20px;
+    max-width: 850px;
+    max-height: 125px;
+    padding: 0;
+    margin: 0;
+    font-family:'Courier New', Courier, monospace;
+    color: #17202A;
+    font-size: 16px;
+    display: flex;
+    align-self: center;
+}
+
+.sheldon {
+    font-weight: bold;
+    text-align: right;
+}
+
+.instructionsPic {
+    padding: 0;
+    margin: 0;
+}
+
+.instructionsPic img {
+    transform: translate(-10px, -25px);
+}
+
+.middle {
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.middle, .chooseYourWeapon {
+    max-width: 850px;
+    margin: auto;
+}
+
+.container {
+    margin-top: -25px;
+}
+
+.winSpan {
+    color: #AAFF00;
+}
+
+.loseSpan {
+    color: #FF4433;
+}
+
+.battleground, .chooseYourWeapon {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.battlegroundLeft, .battlegroundRight {
+    display: flex;
+    flex-direction: column;
+}
+
+#computerScoreDiv, #playerScoreDiv {
+    height: 32px;
+}
+
+#computerIconDiv, #playerIconDiv {
+    height: 230px;
+    width: 230px;
+}
+
 button {
     background-color: #566573;
-    color: #D6DBDF;
+    color: #D5D8DC;
     font-family: "VT323", monospace;
     font-size: 32px;
     width: 125px;
@@ -50,19 +108,46 @@ button {
     box-shadow: 0 9px #2C3E50;
 }
 
-button:hover {
-    background-color: #566573;
+button img {
+    margin-bottom: -10px;
+    opacity: 0.7;
+}
+
+button:hover, input:hover {
+    background-color: #808B96;
     color: #FFFFFF;
     box-shadow: 0 5px #273746;
     transform: translateY(5px);
     cursor: pointer;
 }
 
-button img {
-    margin-bottom: -10px;
-    opacity: 0.7;
-}
-
 button:hover img {
     opacity: 1;
+}
+
+input {
+    background-color: #566573;
+    color: #D5D8DC;
+    font-family: "VT323", monospace;
+    font-size: 32px;
+    width: 225px;
+    padding: 5px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 9px #2C3E50;
+}
+
+.footer {
+    background-color: #17202A;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 12px;
+    color: #566573;
+}
+
+.footer a:link, .footer a:visited, .footer a:active {
+    color: #55768F;
+}
+
+.footer a:hover {
+    color: #5588AB;
 }

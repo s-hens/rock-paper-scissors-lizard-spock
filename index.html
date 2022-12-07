@@ -5,39 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors, Lizard, Spock</title>
-    <script src="./javascript.js" defer></script>
-    <script src="https://kit.fontawesome.com/017ecc6468.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
+    <script src="./javascript.js" defer></script>
 </head>
 <body>
     <div class="header">
         <h1>ROCK PAPER SCISSORS LIZARD SPOCK</h1>
+        First player with 5 points wins the round.
     </div>
     <div class="instructions">
-        <p>"It's very simple. Scissors cuts paper, paper covers rock, rock crushes lizard, lizard poisons Spock, Spock smashes scissors, scissors decapitate lizard, lizard eats paper, paper disproves Spock, Spock vaporizes rock, <u>and as it always has</u>, rock crushes scissors."</p>
-        <p>First player with 5 points wins the round.</p>
-    </div>
-    <div id="battleCommentaryDiv"></div>
-    <div class="battleground">
-        <div class="battlegroundLeft">
-            <div id="playerIconDiv"></div>
-            <div id="playerScoreDiv"></div>
+        <div class="instructionsText">
+            "<em>It's very simple.</em> Scissors cuts paper, paper covers rock, rock crushes lizard, lizard poisons Spock, Spock smashes scissors, scissors decapitates lizard, lizard eats paper, paper disproves Spock, Spock vaporizes rock, <em>and as it always has</em>, rock crushes scissors."
+            <p class="sheldon">-Sheldon Cooper </p>
         </div>
-        <div class="battlegroundRight">
-            <div id="computerIconDiv"></div>
-            <div id="computerScoreDiv"></div>
+        <div class="instructionsPic">
+            <img src="./images/sheldon.png">
         </div>
     </div>
-    <div class="chooseYourWeapon">
-        <button id="rock"><img src="./images/rockmini.png"><br>Rock</button>
-        <button id="paper"><img src="./images/papermini.png"><br>Paper</button>
-        <button id="scissors"><img src="./images/scissorsmini.png"></i><br>Scissors</button>
-        <button id="lizard"><img src="./images/lizardmini.png"><br>Lizard</button>
-        <button id="spock"><img src="./images/spockmini.png"><br>Spock</button>
+<div class="container">
+    <div class="middle">
+        <div id="battleCommentaryDiv">Choose your weapon to begin:</div>
+        <div class="battleground">
+            <div class="battlegroundLeft">
+                <div id="playerIconDiv"></div>
+                <div id="playerScoreDiv"></div>
+            </div>
+            <div class="battlegroundRight">
+                <div id="computerIconDiv"></div>
+                <div id="computerScoreDiv"></div>
+            </div>
+        </div>
     </div>
-
+        <div class="chooseYourWeapon">
+            <button id="rock"><img src="./images/rockmini.png"><br>Rock</button>
+            <button id="paper"><img src="./images/papermini.png"><br>Paper</button>
+            <button id="scissors"><img src="./images/scissorsmini.png"></i><br>Scissors</button>
+            <button id="lizard"><img src="./images/lizardmini.png"><br>Lizard</button>
+            <button id="spock"><img src="./images/spockmini.png"><br>Spock</button>
+        </div>
+    </div>
+    <div class="footer">
+        Game concept by <a href="http://www.samkass.com/theories/RPSSL.html">Sam Kass & Karen Bryla</a>. Code by <a href="https://github.com/s-hens">Steph Henson</a>.
+    </div>
 </body>
 </html>

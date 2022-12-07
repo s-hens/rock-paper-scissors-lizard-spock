@@ -24,19 +24,19 @@ function playRound(computerSelection, playerSelection) {
     //Icons to show what the computer chose
     switch(true) {
         case computerSelection == "rock":
-            computerIconDiv.innerHTML = `<img src="./images/rock1.png">`;
+            computerIconDiv.innerHTML = `<img src="./images/rock.png">`;
             break;
         case computerSelection == "paper":
-            computerIconDiv.innerHTML = `<img src="./images/paper1.png">`;
+            computerIconDiv.innerHTML = `<img src="./images/paper.png">`;
             break;
         case computerSelection == "scissors":
-            computerIconDiv.innerHTML = `<img src="./images/scissors1.png">`;
+            computerIconDiv.innerHTML = `<img src="./images/scissors.png">`;
             break;
         case computerSelection == "lizard":
-            computerIconDiv.innerHTML = `<img src="./images/lizard1.png">`;
+            computerIconDiv.innerHTML = `<img src="./images/lizard.png">`;
             break;
         case computerSelection == "spock":
-            computerIconDiv.innerHTML = `<img src="./images/spock1.png">`;
+            computerIconDiv.innerHTML = `<img src="./images/spock.png">`;
             break;
         default:
             computerIconDiv.textContent = ``;
@@ -44,19 +44,19 @@ function playRound(computerSelection, playerSelection) {
     //Icons to show what the player chose
     switch(true) {
         case playerSelection == "rock":
-            playerIconDiv.innerHTML = `<img src="./images/rock1.png">`;
+            playerIconDiv.innerHTML = `<img src="./images/rock.png">`;
             break;
         case playerSelection == "paper":
-            playerIconDiv.innerHTML = `<img src="./images/paper1.png">`;
+            playerIconDiv.innerHTML = `<img src="./images/paper.png">`;
             break;
         case playerSelection == "scissors":
-            playerIconDiv.innerHTML = `<img src="./images/scissors1.png">`;
+            playerIconDiv.innerHTML = `<img src="./images/scissors.png">`;
             break;
         case playerSelection == "lizard":
-            playerIconDiv.innerHTML = `<img src="./images/lizard1.png">`;
+            playerIconDiv.innerHTML = `<img src="./images/lizard.png">`;
             break;
         case playerSelection == "spock":
-            playerIconDiv.innerHTML = `<img src="./images/spock1.png">`;
+            playerIconDiv.innerHTML = `<img src="./images/spock.png">`;
             break;
         default:
             playerIconDiv.textContent = ``;
@@ -68,87 +68,87 @@ function playRound(computerSelection, playerSelection) {
             break;
         //Computer chooses rock
         case computerSelection == "rock" && playerSelection == "paper":
-            battleCommentaryDiv.textContent = `You win! Paper covers rock.`;
+            battleCommentaryDiv.innerHTML = `<span class="winSpan">You win!</span> Paper covers rock.`;
             playerScore = playerScore + 1;
             break;
         case computerSelection == "rock" && playerSelection == "scissors":
-            battleCommentaryDiv.textContent = `You lose! Rock crushes scissors.`;
+            battleCommentaryDiv.innerHTML = `<span class="loseSpan">You lose!</span> Rock crushes scissors.`;
             computerScore = computerScore +1;
             break;
         case computerSelection == "rock" && playerSelection == "lizard":
-            battleCommentaryDiv.textContent = `You lose! Rock crushes lizard.`;
+            battleCommentaryDiv.innerHTML = `<span class="loseSpan">You lose!</span> Rock crushes lizard.`;
             computerScore = computerScore +1;
             break;
         case computerSelection == "rock" && playerSelection == "spock":
-            battleCommentaryDiv.textContent = `You win! Spock vapourises rock.`;
+            battleCommentaryDiv.innerHTML = `<span class="winSpan">You win!</span> Spock vapourises rock.`;
             playerScore = playerScore + 1;
             break;
         //Computer chooses paper
         case computerSelection == "paper" && playerSelection == "rock":
-            battleCommentaryDiv.textContent = `You lose! Paper covers rock.`;
+            battleCommentaryDiv.innerHTML = `<span class="loseSpan">You lose!</span> Paper covers rock.`;
             computerScore = computerScore +1;
             break;
         case computerSelection == "paper" && playerSelection == "scissors":
-            battleCommentaryDiv.textContent = `You win! Scissors cut paper.`;
+            battleCommentaryDiv.innerHTML = `<span class="winSpan">You win!</span> Scissors cut paper.`;
             playerScore = playerScore + 1;
             break;
         case computerSelection == "paper" && playerSelection == "lizard":
-            battleCommentaryDiv.textContent = `You win! Lizard eats paper.`;
+            battleCommentaryDiv.innerHTML = `<span class="winSpan">You win!</span> Lizard eats paper.`;
             playerScore = playerScore + 1;
             break;
         case computerSelection == "paper" && playerSelection == "spock":
-            battleCommentaryDiv.textContent = `You lose! Paper disproves Spock.`;
+            battleCommentaryDiv.innerHTML = `<span class="loseSpan">You lose!</span> Paper disproves Spock.`;
             computerScore = computerScore +1;
             break;
         //Computer chooses scissors
         case computerSelection == "scissors" && playerSelection == "rock":
-            battleCommentaryDiv.textContent = `You win! Rock crushes scissors.`;
+            battleCommentaryDiv.innerHTML = `<span class="winSpan">You win!</span> Rock crushes scissors.`;
             playerScore = playerScore + 1;
             break;
         case computerSelection == "scissors" && playerSelection == "paper":
-            battleCommentaryDiv.textContent = `You lose! Scissors cut paper.`;
+            battleCommentaryDiv.innerHTML = `<span class="loseSpan">You lose!</span> Scissors cut paper.`;
             computerScore = computerScore +1;
             break;
         case computerSelection == "scissors" && playerSelection == "lizard":
-            battleCommentaryDiv.textContent = `You lose! Scissors decapitate lizard.`;
+            battleCommentaryDiv.innerHTML = `<span class="loseSpan">You lose!</span> Scissors decapitate lizard.`;
             computerScore = computerScore +1;
             break;
         case computerSelection == "scissors" && playerSelection == "spock":
-            battleCommentaryDiv.textContent = `You win! Spock smashes scissors.`;
+            battleCommentaryDiv.innerHTML = `<span class="winSpan">You win!</span> Spock smashes scissors.`;
             playerScore = playerScore + 1;
             break;
         //Computer chooses lizard
         case computerSelection == "lizard" && playerSelection == "rock":
-            battleCommentaryDiv.textContent = `You win! Rock crushes lizard.`;
+            battleCommentaryDiv.innerHTML = `<span class="winSpan">You win!</span> Rock crushes lizard.`;
             playerScore = playerScore + 1;
             break;
         case computerSelection == "lizard" && playerSelection == "paper":
-            battleCommentaryDiv.textContent = `You lose! Lizard eats paper.`;
+            battleCommentaryDiv.innerHTML = `<span class="loseSpan">You lose!</span> Lizard eats paper.`;
             computerScore = computerScore +1;
             break;
         case computerSelection == "lizard" && playerSelection == "scissors":
-            battleCommentaryDiv.textContent = `You win! Scissors decapitate lizard.`;
+            battleCommentaryDiv.innerHTML = `<span class="winSpan">You win!</span> Scissors decapitate lizard.`;
             playerScore = playerScore + 1;
             break;
         case computerSelection == "lizard" && playerSelection == "spock":
-            battleCommentaryDiv.textContent = `You lose! Lizard poisons Spock.`;
+            battleCommentaryDiv.innerHTML = `<span class="loseSpan">You lose!</span> Lizard poisons Spock.`;
             computerScore = computerScore +1;
             break;
         //Computer chooses spock
         case computerSelection == "spock" && playerSelection == "rock":
-            battleCommentaryDiv.textContent = `You lose! Spock vapourises rock.`;
+            battleCommentaryDiv.innerHTML = `<span class="loseSpan">You lose!</span> Spock vapourises rock.`;
             computerScore = computerScore +1;
             break;
         case computerSelection == "spock" && playerSelection == "paper":
-            battleCommentaryDiv.textContent = `You win! Paper disproves Spock.`;
+            battleCommentaryDiv.innerHTML = `<span class="winSpan">You win!</span> Paper disproves Spock.`;
             playerScore = playerScore + 1;
              break;
         case computerSelection == "spock" && playerSelection == "scissors":
-            battleCommentaryDiv.textContent = `You lose! Spock smashes scissors.`;
+            battleCommentaryDiv.innerHTML = `<span class="loseSpan">You lose!</span> Spock smashes scissors.`;
             computerScore = computerScore +1;
             break;
         case computerSelection == "spock" && playerSelection == "lizard":
-            battleCommentaryDiv.textContent = `You win! Lizard poisions Spock.`;
+            battleCommentaryDiv.innerHTML = `<span class="winSpan">You win!</span> Lizard poisions Spock.`;
             playerScore = playerScore + 1;
             break;
         //Player goes rogue
@@ -158,23 +158,23 @@ function playRound(computerSelection, playerSelection) {
     playerScoreDiv.textContent = `Player Score: ${playerScore}`;
     computerScoreDiv.textContent = `Computer Score: ${computerScore}`;
     if (playerScore >= 5 && computerScore < 5) {
-        battleCommentaryDiv.textContent = `Player WINS the round! Final score: ${playerScore} to ${computerScore}. Play again?`;
+        battleCommentaryDiv.innerHTML = `<span class="winSpan">You win the round!</span><p><form action="./index.html"><input type="submit" value="Play again?"></form></p>`;
         computerIconDiv.textContent = ``;
         playerIconDiv.textContent = ``;
-        computerScoreDiv.textContent = ``;
-        playerScoreDiv.textContent = ``;
+        computerIconDiv.style.cssText = `height: auto;`
+        playerIconDiv.style.cssText = `height: auto;`
         computerScore = 0;
         playerScore = 0;
     } else if (computerScore >= 5 && playerScore <5) {
-        battleCommentaryDiv.textContent = `Computer WINS the round! Final score: ${playerScore} to ${computerScore}. Play again?`;
+        battleCommentaryDiv.innerHTML = `<span class="loseSpan">Computer wins the round!</span><p><form action="./index.html"><input type="submit" value="Play again?"></form></p>`;
         computerIconDiv.textContent = ``;
         playerIconDiv.textContent = ``;
-        computerScoreDiv.textContent = ``;
-        playerScoreDiv.textContent = ``;
+        computerIconDiv.style.cssText = `height: auto;`
+        playerIconDiv.style.cssText = `height: auto;`
         computerScore = 0;
         playerScore = 0;
     }
-    }
+}
 
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", playRound);
