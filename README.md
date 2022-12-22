@@ -1,11 +1,14 @@
-# rock-paper-scissors-lizard-spock
+# Rock, Paper, Scissors, Lizard, Spock
 
-Live: https://s-hens.github.io/rock-paper-scissors-lizard-spock/
+### [Live demo](https://s-hens.github.io/rock-paper-scissors-lizard-spock/)
 
-Summary: This is a JavaScript-based web game where the user plays "Rock, Paper, Scissors, Lizard, Spock" against the computer. The computer chooses its moves randomly.
+## Summary
 
-Done as part of The Odin Project (https://www.theodinproject.com/) foundations curriculum. 
+This is a JavaScript-based web game where the user plays "Rock, Paper, Scissors, Lizard, Spock" against the computer. The computer chooses its moves randomly.
 
-Creating this game, I learned about:
+Done as part of [The Odin Project](https://www.theodinproject.com/) foundations curriculum.
+
+## I learned about...
+
 - JavaScript functions, conditionals, loops, and events
 - DOM manipulation
