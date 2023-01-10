@@ -122,6 +122,14 @@ h1 {
     width: 230px;
 }
 
+#computerIconDiv img, #playerIconDiv img {
+    filter: contrast(125%)
+            drop-shadow(2px 2px 0px #17202A)
+            drop-shadow(-2px -2px 0px #17202A)
+            drop-shadow(-2px 2px 0px #17202A)
+            drop-shadow(2px -2px 0px #17202A);
+}
+
 button {
     background-color: #566573;
     color: #D5D8DC;
