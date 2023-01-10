@@ -2,7 +2,24 @@ const playerScoreDiv = document.querySelector("#playerScoreDiv");
 const computerScoreDiv = document.querySelector("#computerScoreDiv");
 const playerIconDiv = document.querySelector("#playerIconDiv");
 const computerIconDiv = document.querySelector("#computerIconDiv");
+
 const battleCommentaryDiv = document.querySelector("#battleCommentaryDiv");
+battleCommentaryDiv.addEventListener("click", reset);
+
+const rock = document.querySelector("#rock");
+rock.addEventListener("click", playRound);
+
+const paper = document.querySelector("#paper");
+paper.addEventListener("click", playRound);
+
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener("click", playRound);
+
+const lizard = document.querySelector("#lizard");
+lizard.addEventListener("click", playRound);
+
+const spock = document.querySelector("#spock");
+spock.addEventListener("click", playRound);
 
 const choices = ["rock", "paper", "scissors", "lizard", "spock"];
 let computerScore = 0;
@@ -21,46 +38,10 @@ function getPlayerChoice() {
 function playRound(computerSelection, playerSelection) {
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
-    //Icons to show what the computer chose
-    switch(true) {
-        case computerSelection == "rock":
-            computerIconDiv.innerHTML = `<img src="./images/rock.png">`;
-            break;
-        case computerSelection == "paper":
-            computerIconDiv.innerHTML = `<img src="./images/paper.png">`;
-            break;
-        case computerSelection == "scissors":
-            computerIconDiv.innerHTML = `<img src="./images/scissors.png">`;
-            break;
-        case computerSelection == "lizard":
-            computerIconDiv.innerHTML = `<img src="./images/lizard.png">`;
-            break;
-        case computerSelection == "spock":
-            computerIconDiv.innerHTML = `<img src="./images/spock.png">`;
-            break;
-        default:
-            computerIconDiv.textContent = ``;
-    }
-    //Icons to show what the player chose
-    switch(true) {
-        case playerSelection == "rock":
-            playerIconDiv.innerHTML = `<img src="./images/rock.png">`;
-            break;
-        case playerSelection == "paper":
-            playerIconDiv.innerHTML = `<img src="./images/paper.png">`;
-            break;
-        case playerSelection == "scissors":
-            playerIconDiv.innerHTML = `<img src="./images/scissors.png">`;
-            break;
-        case playerSelection == "lizard":
-            playerIconDiv.innerHTML = `<img src="./images/lizard.png">`;
-            break;
-        case playerSelection == "spock":
-            playerIconDiv.innerHTML = `<img src="./images/spock.png">`;
-            break;
-        default:
-            playerIconDiv.textContent = ``;
-    }
+
+    computerIconDiv.innerHTML = `<img src="./images/${computerSelection}.png">`;
+    playerIconDiv.innerHTML = `<img src="./images/${playerSelection}.png">`;
+   
     switch (true) {
         //Tie
         case computerSelection == playerSelection:
@@ -151,42 +132,32 @@ function playRound(computerSelection, playerSelection) {
             battleCommentaryDiv.innerHTML = `<span class="winSpan">You win!</span> Lizard poisions Spock.`;
             playerScore = playerScore + 1;
             break;
-        //Player goes rogue
-        default:
-            alert(`Hey! ${playerSelection} is not a valid choice. Please choose rock, paper, scissors, lizard, or spock.`);
+        default: return;
     }
+
     playerScoreDiv.textContent = `Player Score: ${playerScore}`;
     computerScoreDiv.textContent = `Computer Score: ${computerScore}`;
+    
     if (playerScore >= 5 && computerScore < 5) {
-        battleCommentaryDiv.innerHTML = `<span class="winSpan">You win the round!</span><p><form action="./index.html"><input type="submit" value="Play again?"></form></p>`;
+        battleCommentaryDiv.innerHTML = `<span class="winSpan">You win the round!</span><p><button id="reset">Play<br>again?</button></p>`;
         computerIconDiv.textContent = ``;
         playerIconDiv.textContent = ``;
         computerIconDiv.style.cssText = `height: auto;`
         playerIconDiv.style.cssText = `height: auto;`
-        computerScore = 0;
-        playerScore = 0;
     } else if (computerScore >= 5 && playerScore <5) {
-        battleCommentaryDiv.innerHTML = `<span class="loseSpan">Computer wins the round!</span><p><form action="./index.html"><input type="submit" value="Play again?"></form></p>`;
+        battleCommentaryDiv.innerHTML = `<span class="winSpan">You win the round!</span><p><button id="reset">Play<br>again?</button></p>`;
         computerIconDiv.textContent = ``;
         playerIconDiv.textContent = ``;
         computerIconDiv.style.cssText = `height: auto;`
         playerIconDiv.style.cssText = `height: auto;`
-        computerScore = 0;
-        playerScore = 0;
     }
 }
 
-const rock = document.querySelector("#rock");
-rock.addEventListener("click", playRound);
-
-const paper = document.querySelector("#paper");
-paper.addEventListener("click", playRound);
-
-const scissors = document.querySelector("#scissors");
-scissors.addEventListener("click", playRound);
-
-const lizard = document.querySelector("#lizard");
-lizard.addEventListener("click", playRound);
-
-const spock = document.querySelector("#spock");
-spock.addEventListener("click", playRound);
+function reset(e) {
+    if(e.target.id != "reset") return;
+    computerScore = 0;
+    playerScore = 0;
+    playerScoreDiv.textContent = `Player Score: ${playerScore}`;
+    computerScoreDiv.textContent = `Computer Score: ${computerScore}`;
+    battleCommentaryDiv.innerText = `Choose your weapon to begin:`;
+}
