@@ -12,3 +12,4 @@ Done as part of [The Odin Project](https://www.theodinproject.com/) foundations 
 
 - JavaScript functions, conditionals, loops, and events
 - DOM manipulation
+- Event delegation
