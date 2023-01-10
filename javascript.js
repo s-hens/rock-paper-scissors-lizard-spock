@@ -145,7 +145,7 @@ function playRound(computerSelection, playerSelection) {
         computerIconDiv.style.cssText = `height: auto;`
         playerIconDiv.style.cssText = `height: auto;`
     } else if (computerScore >= 5 && playerScore <5) {
-        battleCommentaryDiv.innerHTML = `<span class="winSpan">You win the round!</span><p><button id="reset">Play<br>again?</button></p>`;
+        battleCommentaryDiv.innerHTML = `<span class="loseSpan">You lose the round!</span><p><button id="reset">Play<br>again?</button></p>`;
         computerIconDiv.textContent = ``;
         playerIconDiv.textContent = ``;
         computerIconDiv.style.cssText = `height: auto;`
